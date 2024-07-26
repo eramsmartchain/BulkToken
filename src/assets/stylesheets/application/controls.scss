@@ -1,0 +1,311 @@
+%control {
+  outline: none;
+  border-radius: 4px;
+  line-height: 40px;
+
+  &-font {
+    color: #000000;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;;
+  }
+}
+
+#addresses-with-balances {
+  line-height: 20px;
+
+  &::-webkit-input-placeholder {
+    color: #8e9ea9;
+    opacity: 0.7;
+  }
+
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: #8e9ea9;
+    opacity: 0.7;
+  }
+
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #8e9ea9;
+    opacity: 0.7;
+  }
+
+  &:-ms-input-placeholder {
+    color: #8e9ea9;
+    opacity: 0.7;
+  }
+}
+
+.form {
+  padding-top: 60px;
+  span.error {
+    margin-left: 10px;
+    color: #fd7491;
+  }
+
+  &_header {
+    @extend %flex-between;
+    align-items: center;
+  }
+
+  &-group {
+    width: 100%;
+  }
+
+  &-inline {
+    @extend %flex-between;
+    align-items: flex-start;
+
+    &-i {
+      &_token-address {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      &_token-address-values {
+        width: 100%;
+      }
+
+      &_gas-price {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      &_gas-sharing {
+        width: 100%;
+      }
+
+      &_token-decimals {
+        width: 15%;
+      }
+
+      &_balance {
+        width: 40%;
+      }
+    }
+  }
+}
+
+
+.input,
+.select,
+.multisend-textarea {
+  @extend %control;
+  @extend %control-font;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s box-shadow;
+  box-sizing: border-box;
+  border: 1px solid #EDEDED;
+  background-color: #ffffff;
+
+  &:focus {
+    box-shadow: 0px 10px 20px 0 fade-out(#EDEDED, 0.7);
+  }
+}
+
+.input,
+.select {
+  height: 40px;
+}
+
+.input {
+  padding: 0 20px;
+}
+
+.input[type="number"] {
+  padding-right: 0px;
+}
+
+.select {
+  padding: 0 38px 0 20px;
+  appearance: none;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAMAAADHqI+lAAAACVBMVEWT1P+T1P+T1P9um/dXAAAAAnRSTlMAgJsrThgAAAAlSURBVHgBVcixDQAgAMOwlv+PhqWWyBan56she+KJf+KJJ57sLy2wAIFnBVRPAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-size: 8px 4px;
+  background-position: center right 20px;
+
+  .form_header & {
+    max-width: 160px;
+    margin-bottom: 0;
+  }
+}
+
+.multisend-textarea,
+.multisend-textarea.form-control {
+  @extend %control;
+  @extend %control-font;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s box-shadow;
+  box-sizing: border-box;
+  border: 1px solid #EDEDED;
+  background-color: #ffffff;
+
+  resize: none;
+  height: 186px;
+  padding: 10px 10px;
+  font-family: monospace;
+
+  &:focus {
+    box-shadow: 0px 10px 20px 0 fade-out(#EDEDED, 0.7);
+  }
+}
+
+.multisend-label {
+  @extend %control-font;
+  display: block;
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 15px;;
+  .form_header & {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+}
+
+.multisend-button {
+  @extend %control;
+  @extend %control-font;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.3s box-shadow;
+  border: 0;
+  padding: 0 20px;
+  background-color: #06ADFD;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+
+  &:disabled {
+    -moz-box-shadow: inset 0 0 10px fade-out(#0b4865, 0.7);
+    -webkit-box-shadow: inset 0 0 10px fade-out(#0b4865, 0.7);
+    box-shadow: inset 0 0 10px fade-out(#0b4865, 0.7);
+    opacity: 0.88;
+  }
+
+  &:disabled:hover {
+    box-shadow: inset 0 0 10px fade-out(#0b4865, 0.7);
+  }
+
+  &:hover {
+    box-shadow: 0px 10px 20px 0 fade-out(#06ADFD, 0.7);
+  }
+
+  &_next {
+    margin-left: auto;
+    padding-right: 45px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAMFBMVEX///////////////////////////////////////////////////////////////9Or7hAAAAAD3RSTlMAPT5BSUpRUt3f5ufp6vUxUI2NAAAAS0lEQVR4AWPABGy8HIwMuAEvPz8fM25pDn688kx8+OWZ6SXPwsWPE/CxMwBlcQMe/NK8DKzc+AzH7zT6yiKiBH+Ekpsc2Hg54YkJAFFVCxvQpdH1AAAAAElFTkSuQmCC), linear-gradient(90deg, #06ADFD 0%, #06ADFD 100%);
+    background-size: 15px 10px, 100% 100%;
+    background-position: center right 20px, center;
+  }
+
+  &_prev {
+    padding-left: 45px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAM1BMVEVsb3P///////////////////////////////////////////////////////////////+xgv+bAAAAAXRSTlMAQObYZgAAADxJREFUKM9jYIABTj4GPIBfQIAPr6wAJ15Z/kEpiwNwMzDwCgjgk+fDL43PcB7CThsc8pxkJwcGBi5ssgD2ZQtsy4BYVQAAAABJRU5ErkJggg==), linear-gradient(90deg, #06ADFD 0%, #06ADFD 100%);
+    background-size: 15px 10px, 100% 100%;
+    background-position: center left 20px, center;
+  }
+
+  &_add {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAFVBMVEX///////////////////////////9nSIHRAAAABnRSTlMASUrk5udXTd49AAAAPUlEQVR4Ae3SMRKAAAwCQRIv/P/JWqsz2JutrwPdFZQSbJT4stHfosIBJRzxJRr1ODh6Z9noBfYo6Xn+5wToPQYflYXefQAAAABJRU5ErkJggg==);
+    background-size: 18px 18px;
+    background-position: center center;
+  }
+}
+
+.Select-option,
+.Select-control,
+.Select.Select--single.has-value.is-focused.is-clearable>.Select-control,
+.Select--single>.Select-value {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #EDEDED;
+  height: 44px;
+  border-radius: 6px;
+}
+
+.Select-placeholder,
+.Select--single>.Select-control .Select-value {
+  color: #000000;
+  line-height: 44px;
+}
+
+.Select.has-value.Select--single>.Select-control .Select-value .Select-value-label,
+.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label {
+  color: #000000;
+}
+
+.Select {
+  .Select-menu-outer {
+    background-color: #ffffff;
+    border: 1px solid #EDEDED;
+
+    div {
+      div {
+        padding: 13px 5px 14px 5px;
+
+        &:hover {
+          color: #06ADFD;
+        }
+        &.is-focused {
+          color: #06ADFD;
+        }
+        &.is-active {
+          color: #06ADFD;
+        }
+      }
+    }
+  }
+}
+.Select-control {
+  .Select-input {
+    color: #000000;
+    height: 44px;
+    input {
+      padding: 13px 0 14px;
+    }
+  }
+  .Select-clear-zone {
+    color: #000000;
+  }
+}
+
+#token-address {
+  color: #000000;
+}
+
+.multisend-enter-done {
+  select {
+    background-color: transparent;
+  }
+}
+
+#multisend {
+  p.fetchBalance {
+    font-weight: bold;
+    color: red;
+    font-size: large;
+  }
+}
+.csv-reader-input {
+  .csv-input {
+    &::file-selector-button {
+      color: #ffffff;
+      background-color: #000000;
+      border: 1px solid #424242;
+      border-radius: 6px;
+      padding: 13px 18px;
+      cursor: pointer;
+    }
+  }
+}
+.multisend-buttons {
+  display: flex;
+}
